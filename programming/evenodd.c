@@ -1,14 +1,19 @@
 #include<stdio.h>
+int check_even(int n);
+
+
 int main(){
-int n;
-printf("enter your number :");
-scanf("%d",&n);
-for(int i = 1;i<=10;i++){
-if(n%2==0)    
-    printf("print the even %d",n);
-}   
-if(n%2!=0){
-    printf("print the odd %d",n);
+int n = 5;
+
+check_even(n);
+
+}
+int check_even(int n){
+if(n%2==0){
+    printf("print the even number ");
+}    
+else{
+    printf("print the odd number ");
 }
 return 0;
 }
