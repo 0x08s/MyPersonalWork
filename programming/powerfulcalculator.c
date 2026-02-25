@@ -18,8 +18,8 @@ char choice ;
 printf("complete run function use y otherwise N");
 scanf(" %c",&choice);
 
-return 0;    
-}
+
+
 if(choice == 'y' || choice == 'Y'){
 int a ,b,c,d;
     printf("enter your 1st number: ");
@@ -42,7 +42,12 @@ else if (choice ==  'n'||choice == 'N'){
 }
 else{
     printf("Ivalid");
-}    
+}
+
+
+return 0;    
+}
+
 void sumnumber(int a, int b ,int c , int d){
 printf("sum = %d \n", a + b +c +d);
 }
@@ -57,5 +62,3 @@ printf("div = %d\n",a / b /c /d);
 void modulenumber(int a, int b ,int c , int d){
 printf("module = %d\n",a % b% c % d);
 }
-
-
