@@ -1,34 +1,42 @@
 #include<stdio.h>
-
 int main(){
 
-int r ;
-printf("enter your number of row");
-scanf("%d",&r);
+// 1 2 3
+// 4 5 6
 
-int c ;
-printf("enter your number of colum");
-scanf("%d",&c);
+int a[2][3] = {{1,2,3},{4,5,6}};
 
-int arr[r][c];
+int b[3][2] = {{1,2},{3,4},{5,6}};
 
-for(int i = 0;i < r;i++){
+// 1 2
+// 3 4
+// 5 6
+int result [2][2];
+int rc = 2;
+for(int i = 0;i < 2;i++){
 
-for(int j =0;j < c;j++){
+for(int j =0;j < 2 ;j++){
+result[i][j] = 0;
+for(int k = 0;k < rc;k++){
 
-scanf("%d",&arr[i][j]);
+result[i][j] += a[i][k] * b[k][j];
 
 }
 }
+}
 
-for(int i = 0; i < c;i++){
+// print the result 
 
-for(int j = 0; j < r;j++){
-printf("%d",arr[j][i]);
+for(int i = 0;i < 2;i++){
+
+for(int j =0;j < 2 ;j++){
+
+printf("%d",result[i][j]);
 
 }
 printf("\n");
 }
+
 
 return 0;    
 }
