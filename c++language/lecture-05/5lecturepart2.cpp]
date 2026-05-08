@@ -1,0 +1,62 @@
+#include <iostream>
+#include <iomanip>   // for setprecision
+using namespace std;
+
+int main() {
+    float amount;
+    float discount = 0.0f;
+    float discountAmount;
+    float finalAmount;
+
+    cout << "Enter total purchase amount (in PKR): ";
+    cin >> amount;
+
+    // Input validation
+    if (amount <= 0) {
+        cout << "Error: Amount must be greater than zero!\n";
+        return 1;
+    }
+
+    // Decide discount percentage using if statements
+    if (amount >= 5000) {
+        discount = 20.0f;    // 20% discount
+    }
+    else if (amount >= 3000) {
+        discount = 15.0f;    // 15% discount
+    }
+    else if (amount >= 1000) {
+        discount = 10.0f;    // 10% discount
+    }
+    else if (amount >= 500) {
+        discount = 5.0f;     // 5% discount
+    }
+    else {
+        discount = 0.0f;     // No discount
+    }
+
+    // Calculations
+    discountAmount = amount * (discount / 100.0f);
+    finalAmount = amount - discountAmount;
+
+    // Display result with nice formatting
+    cout << "\n";
+    cout << "        Discount Calculation\n";
+    cout << "\n";
+    cout << fixed << setprecision(2);
+
+    cout << "Purchase Amount    : Rs. " << amount << endl;
+    cout << "Discount Rate      : " << discount << "%" << endl;
+    cout << "Discount Amount    : Rs. " << discountAmount << endl;
+    cout << "\n";
+    cout << "Amount to Pay      : Rs. " << finalAmount << endl;
+    cout << "\n";
+
+    if (discount == 0) {
+        cout << "Sorry! No discount applicable on this amount.\n";
+    }
+    else {
+        cout << "Congratulations! You got " << discount << "% discount!\n";
+    }
+
+    return 0;
+}
